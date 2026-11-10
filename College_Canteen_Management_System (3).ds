@@ -1,0 +1,4197 @@
+/*
+ * Author       : sankaragomathi.r.2024.cse883
+ * Generated on : 10-Nov-2026 16:22:00
+ * Version      : 1.0
+ */
+ application "College Canteen Management System"
+ {
+ 	date format = "dd-MMM-yyyy"
+ 	time zone = "America/Los_Angeles"
+ 	time format = "24-hr"
+
+ 	forms
+	{
+		form customer_profile
+		{
+			displayname = "Customer Profile"
+			success message = "Customer Profile Added Successfully"
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			customer_name
+			(
+    			type = name
+				displayname = "Customer Name"
+     			prefix
+     			(
+	     			 type = prefix
+	     			 displayname ="Prefix"
+	     			 visibility = false
+	     			 value = {"Mr.","Mrs.","Ms."}
+     			) 
+     			first_name
+     			(
+	     			 type = first_name
+	     			 displayname ="First Name"
+     			) 
+     			last_name
+     			(
+	     			 type = last_name
+	     			 displayname ="Last Name"
+	     			 visibility = false
+     			) 
+     			suffix
+     			(
+	     			 type = suffix
+	     			 displayname ="Suffix"
+	     			 visibility = false
+     			) 
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			email
+			(
+    			type = email
+				displayname = "Email"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			phone_number
+			(
+    			type = phonenumber
+				displayname = "Phone Number"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			address
+			(
+    			type = address
+				displayname = "Address"
+     			capture_coordinates = true
+     			adjust_using_map = false
+     			address_line_1
+     			(
+	     			  type = address_line_1
+	     			  displayname = "Address Line 1"
+     			) 
+     			address_line_2
+     			(
+	     			  type = address_line_2
+	     			  displayname = "Address Line 2"
+	     			 visibility = false
+     			) 
+     			district_city
+     			(
+	     			  type = district_city
+	     			  displayname = "City / District"
+	     			 visibility = false
+     			) 
+     			state_province
+     			(
+	     			  type = state_province
+	     			  displayname = "State / Province"
+	     			 visibility = false
+     			) 
+     			postal_Code
+     			(
+	     			  type = postal_Code
+	     			  displayname = "Postal Code"
+	     			 visibility = false
+     			) 
+     			country
+     			(
+	     			  type = country
+	     			  displayname = "Country"
+	     			 visibility = false
+     			) 
+     			latitude
+     			(
+	     			  type = latitude
+	     			  displayname = "Latitude"
+	     			 visibility = false
+     			) 
+     			longitude
+     			(
+	     			  type = longitude
+	     			  displayname = "Longitude"
+	     			 visibility = false
+     			) 
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			registration_date
+			(
+    			type = date
+				displayname = "Registration Date"
+				alloweddays = 0,1,2,3,4,5,6
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			customer_code
+			(
+    			type = text
+				displayname = "Customer Code"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			status
+			(
+				type = picklist
+				displayname = "Status"
+				values = {"Active","Inactive","Pending"}
+				others option = true
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			department
+			(
+    			type = text
+				displayname = "Department"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			student_id
+			(
+    			type = text
+				displayname = "Student ID"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			staff_id
+			(
+    			type = text
+				displayname = "Staff ID"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		form food_category
+		{
+			displayname = "Food Category"
+			success message = "Food Category Added Successfully"
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			category_name
+			(
+    			type = text
+				displayname = "Category Name"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			description
+			(
+    			type = textarea
+				displayname = "Description"
+				height = 100px
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			category_code
+			(
+    			type = text
+				displayname = "Category Code"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			is_vegetarian
+			(
+    			type = checkbox
+				displayname = "Is Vegetarian"
+				initial value = false
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			is_spicy
+			(
+    			type = checkbox
+				displayname = "Is Spicy"
+				initial value = false
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			allergen_info
+			(
+    			type = textarea
+				displayname = "Allergen Info"
+				height = 100px
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			display_order
+			(
+				type = number
+				displayname = "Display Order"
+				maxchar = 19
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			status
+			(
+				type = radiobuttons
+				displayname = "Status"
+				values = {"Active","Inactive"}
+				others option = true
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		form food_menu
+		{
+			displayname = "Food Menu"
+			success message = "Food Menu Added Successfully"
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			food_name
+			(
+    			type = text
+				displayname = "Food Name"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			food_code
+			(
+    			type = text
+				displayname = "Food Code"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			price
+			(
+				displayname = "Price"
+				type = INR
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			description
+			(
+    			type = textarea
+				displayname = "Description"
+				height = 100px
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			availability_status
+			(
+				type = picklist
+				displayname = "Availability Status"
+				values = {"Out of Stock","Coming Soon","Available"}
+				others option = true
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			category
+			(
+				type = list	
+				displayname = "Category"
+				values  = food_category.ID
+    			displayformat = [category_name]
+				allow new entries
+				[
+					displayname = "Add New"
+				]
+				sortorder = ascending
+				height = 13px
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			type_1
+			(
+				type = list	
+				displayname = "Type"
+				values  = food_type.ID
+    			displayformat = [food_type_name]
+				allow new entries
+				[
+					displayname = "Add New"
+				]
+				sortorder = ascending
+				height = 13px
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			image_url
+			(
+    			type = url
+				displayname = "Image URL"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			calories
+			(
+				type = number
+				displayname = "Calories"
+				maxchar = 19
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			is_featured
+			(
+    			type = checkbox
+				displayname = "Is Featured"
+				initial value = false
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			status
+			(
+				type = radiobuttons
+				displayname = "Status"
+				values = {"Active","Inactive"}
+				others option = true
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		form food_order
+		{
+			displayname = "Food Order"
+			success message = "Food Order Added Successfully"
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			must have order_id
+			(
+    			type = text
+				displayname = "Order ID"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			customer
+			(
+				type = list	
+				displayname = "Customer"
+				values  = customer_profile.ID
+    			displayformat = [customer_name.first_name]
+				allow new entries
+				[
+					displayname = "Add New"
+				]
+				sortorder = ascending
+				height = 13px
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			order_date
+			(
+    			type = datetime
+				displayname = "Order Date"
+				timedisplayoptions = "hh:mm:ss"
+				alloweddays = 0,1,2,3,4,5,6
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			total_amount
+			(
+				displayname = "Total Amount"
+				type = INR
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			order_status
+			(
+				type = picklist
+				displayname = "Order Status"
+				values = {"Ready","Completed","Confirmed","Cancelled","Preparing","Pending"}
+				others option = true
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			payment_method
+			(
+				type = picklist
+				displayname = "Payment Method"
+				values = {"Wallet","Cash","Online","Card"}
+				others option = true
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			special_instructions
+			(
+    			type = textarea
+				displayname = "Special Instructions"
+				height = 100px
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			delivery_mode
+			(
+				type = radiobuttons
+				displayname = "Delivery Mode"
+				values = {"Pickup","Delivery"}
+				others option = true
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			estimated_time
+			(
+    			type = time
+				displayname = "Estimated Time"
+				timedisplayoptions = "hh:mm:ss" 
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			remarks
+			(
+    			type = textarea
+				displayname = "Remarks"
+				height = 100px
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+			blueprint components
+			{
+				stages = {"Order Created","Order Pending Payment","Order Cancelled","Order Confirmed","Order On Hold","Order Processing","Order Ready for Pickup","Order Shipped","Order Delivered","Order Returned","Order Lost","Order Closed","Order Refunded","Order Replacement Shipped"}
+			}
+		}
+		form food_type
+		{
+			displayname = "Food Type"
+			success message = "Food Type Added Successfully"
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			food_type_name
+			(
+    			type = text
+				displayname = "Food Type Name"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			description
+			(
+    			type = textarea
+				displayname = "Description"
+				height = 100px
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			type_code
+			(
+    			type = text
+				displayname = "Type Code"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			dietary_category
+			(
+				type = picklist
+				displayname = "Dietary Category"
+				values = {"Gluten-Free","Veg","Non-Veg","Vegan"}
+				others option = true
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			preparation_time
+			(
+				type = number
+				displayname = "Preparation Time"
+				maxchar = 19
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			is_available
+			(
+    			type = checkbox
+				displayname = "Is Available"
+				initial value = false
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			status
+			(
+				type = radiobuttons
+				displayname = "Status"
+				values = {"Active","Inactive"}
+				others option = true
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		form inventory_transaction
+		{
+			displayname = "Inventory Transaction"
+			success message = "Inventory Transaction Added Successfully"
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			transaction_id
+			(
+    			type = text
+				displayname = "Transaction ID"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			food_item
+			(
+				type = list	
+				displayname = "Food Item"
+				values  = food_menu.ID
+    			displayformat = [food_name]
+				allow new entries
+				[
+					displayname = "Add New"
+				]
+				sortorder = ascending
+				height = 13px
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			transaction_type
+			(
+				type = picklist
+				displayname = "Transaction Type"
+				values = {"Outbound","Return","Adjustment","Inbound"}
+				others option = true
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			quantity
+			(
+				type = number
+				displayname = "Quantity"
+				maxchar = 19
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			transaction_date
+			(
+    			type = datetime
+				displayname = "Transaction Date"
+				timedisplayoptions = "hh:mm:ss"
+				alloweddays = 0,1,2,3,4,5,6
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			available_stock
+			(
+				type = number
+				displayname = "Available Stock"
+				maxchar = 19
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			minimum_stock_level
+			(
+				type = number
+				displayname = "Minimum Stock Level"
+				maxchar = 19
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			remarks
+			(
+    			type = textarea
+				displayname = "Remarks"
+				height = 100px
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			supplier_name
+			(
+    			type = name
+				displayname = "Supplier Name"
+     			prefix
+     			(
+	     			 type = prefix
+	     			 displayname ="Prefix"
+	     			 visibility = false
+	     			 value = {"Mr.","Mrs.","Ms."}
+     			) 
+     			first_name
+     			(
+	     			 type = first_name
+	     			 displayname ="First Name"
+     			) 
+     			last_name
+     			(
+	     			 type = last_name
+	     			 displayname ="Last Name"
+	     			 visibility = false
+     			) 
+     			suffix
+     			(
+	     			 type = suffix
+	     			 displayname ="Suffix"
+	     			 visibility = false
+     			) 
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			cost_per_unit
+			(
+				displayname = "Cost Per Unit"
+				type = USD
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		form order_item
+		{
+			displayname = "Order Item"
+			success message = "Item Ordered Successfully"
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			item_number
+			(
+    			type = text
+				displayname = "Item Number"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			related_order
+			(
+				type = list	
+				displayname = "Related Order"
+				values  = food_order.ID
+    			displayformat = [order_id]
+				allow new entries
+				[
+					displayname = "Add New"
+				]
+				sortorder = ascending
+				height = 13px
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			food_item
+			(
+				type = list	
+				displayname = "Food Item"
+				values  = food_menu.ID
+    			displayformat = [food_name]
+				allow new entries
+				[
+					displayname = "Add New"
+				]
+				sortorder = ascending
+				height = 13px
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			unit_price
+			(
+				displayname = "Unit Price"
+				type = INR
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			quantity
+			(
+				type = number
+				displayname = "Quantity"
+				maxchar = 19
+				initial value = 1
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			line_total
+			(
+				displayname = "Line Total"
+				type = INR
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			item_status
+			(
+				type = radiobuttons
+				displayname = "Item Status"
+				values = {"Active","Removed"}
+				others option = true
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			discount
+			(
+				displayname = "Discount"
+				type = INR
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			tax_amount
+			(
+				displayname = "Tax Amount"
+				type = INR
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			notes
+			(
+    			type = textarea
+				displayname = "Notes"
+				height = 100px
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		form payment_record
+		{
+			displayname = "Payment Record"
+			success message = "Payment Record Added Successfully"
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			payment_id
+			(
+    			type = text
+				displayname = "Payment ID"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			related_order
+			(
+				type = list	
+				displayname = "Related Order"
+				values  = food_order.ID
+    			displayformat = [order_id]
+				allow new entries
+				[
+					displayname = "Add New"
+				]
+				sortorder = ascending
+				height = 13px
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			payment_date
+			(
+    			type = datetime
+				displayname = "Payment Date"
+				timedisplayoptions = "hh:mm:ss"
+				alloweddays = 0,1,2,3,4,5,6
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			amount
+			(
+				displayname = "Amount"
+				type = INR
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			payment_method
+			(
+				type = picklist
+				displayname = "Payment Method"
+				values = {"Wallet","Cash","Online","Card"}
+				others option = true
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			payment_status
+			(
+				type = picklist
+				displayname = "Payment Status"
+				values = {"Failed","Success","Pending","Refunded"}
+				others option = true
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			transaction_reference
+			(
+    			type = text
+				displayname = "Transaction Reference"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			payer_name
+			(
+    			type = name
+				displayname = "Payer Name"
+     			prefix
+     			(
+	     			 type = prefix
+	     			 displayname ="Prefix"
+	     			 visibility = false
+	     			 value = {"Mr.","Mrs.","Ms."}
+     			) 
+     			first_name
+     			(
+	     			 type = first_name
+	     			 displayname ="First Name"
+     			) 
+     			last_name
+     			(
+	     			 type = last_name
+	     			 displayname ="Last Name"
+	     			 visibility = false
+     			) 
+     			suffix
+     			(
+	     			 type = suffix
+	     			 displayname ="Suffix"
+	     			 visibility = false
+     			) 
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			remarks
+			(
+    			type = textarea
+				displayname = "Remarks"
+				height = 100px
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			receipt_url
+			(
+    			type = url
+				displayname = "Receipt URL"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+			blueprint components
+			{
+				stages = {"Payment Initiated","Payment Pending Verification","Payment Cancelled","Payment Processing","Payment Failed","Payment Success","Payment Completed","Payment Refund Initiated","Payment Refunded"}
+			}
+		}
+	}
+	reports
+	{
+		list food_menu_Report
+		{
+			displayName = "All Food Menus"
+			show all rows from food_menu    
+			(
+				food_name as "Food Name"
+				food_code as "Food Code"
+				price as "Price"
+				(
+					display = total,average,min,max	
+				)
+				description as "Description"
+				availability_status as "Availability Status"
+				category as "Category"
+				type_1 as "Type"
+				image_url as "Image URL"
+				calories as "Calories"
+				is_featured as "Is Featured"
+				status as "Status"
+			)
+			conditional formatting
+			(
+				"New Formatting1"
+				{
+				condition = (availability_status == "Available")
+				fields = [availability_status]
+				format = "color:#ffffff;background-color:#765f89;"
+				}
+				"New Formatting2"
+				{
+				condition = (availability_status == "Out of Stock")
+				fields = [availability_status]
+				format = "color:#000000;background-color:#1bbc9b;"
+				}
+			)
+		}
+		kanban food_menu_by_availability_status
+		{
+			displayName = "Availability Statuses"
+			show all rows from food_menu    
+			(
+				food_name as "Food Name"
+				food_code as "Food Code"
+				price as "Price"
+				(
+					display = total,average,min,max	
+				)
+				description as "Description"
+				availability_status as "Availability Status"
+				category as "Category"
+				type_1 as "Type"
+				image_url as "Image URL"
+				calories as "Calories"
+				is_featured as "Is Featured"
+				status as "Status"
+			)
+			options
+			(
+	 			display field = availability_status
+	 		)
+		}
+		list food_order_Report
+		{
+			displayName = "All Food Orders"
+			show all rows from food_order    
+			(
+				order_id as "Order ID"
+				customer as "Customer"
+				order_date as "Order Date"
+				total_amount as "Total Amount"
+				(
+					display = total,average,min,max	
+				)
+				order_status as "Order Status"
+				payment_method as "Payment Method"
+				special_instructions as "Special Instructions"
+				delivery_mode as "Delivery Mode"
+				estimated_time as "Estimated Time"
+				remarks as "Remarks"
+			)
+			conditional formatting
+			(
+				"New Formatting1"
+				{
+				condition = (payment_method == "Card")
+				fields = [payment_method]
+				format = "color:#ffffff;background-color:#765f89;"
+				}
+				"New Formatting2"
+				{
+				condition = (payment_method == "Cash")
+				fields = [payment_method]
+				format = "color:#000000;background-color:#1bbc9b;"
+				}
+				"New Formatting3"
+				{
+				condition = (payment_method == "Online")
+				fields = [payment_method]
+				format = "color:#ffffff;background-color:#e84c3d;"
+				}
+				"New Formatting4"
+				{
+				condition = (payment_method == "Wallet")
+				fields = [payment_method]
+				format = "color:#ffffff;background-color:#3598db;"
+				}
+			)
+		}
+		kanban food_order_by_order_status
+		{
+			displayName = "Order Statuses"
+			show all rows from food_order    
+			(
+				order_id as "Order ID"
+				customer as "Customer"
+				order_date as "Order Date"
+				total_amount as "Total Amount"
+				(
+					display = total,average,min,max	
+				)
+				order_status as "Order Status"
+				payment_method as "Payment Method"
+				special_instructions as "Special Instructions"
+				delivery_mode as "Delivery Mode"
+				estimated_time as "Estimated Time"
+				remarks as "Remarks"
+			)
+			options
+			(
+	 			display field = order_status
+	 		)
+		}
+		list order_item_Report
+		{
+			displayName = "All Items"
+			show all rows from order_item    
+			(
+				item_number as "Item Number"
+				related_order as "Related Order"
+				food_item as "Food Item"
+				(
+					view = food_menu_Report
+					delimiter = newline
+				)
+				unit_price as "Unit Price"
+				(
+					display = total,average,min,max	
+				)
+				quantity as "Quantity"
+				line_total as "Line Total"
+				(
+					display = total,average,min,max	
+				)
+				item_status as "Item Status"
+				discount as "Discount"
+				(
+					display = total,average,min,max	
+				)
+				tax_amount as "Tax Amount"
+				(
+					display = total,average,min,max	
+				)
+				notes as "Notes"
+			)
+		}
+		list inventory_transaction_Report
+		{
+			displayName = "All Inventory Transactions"
+			show all rows from inventory_transaction    
+			(
+				transaction_id as "Transaction ID"
+				food_item as "Food Item"
+				transaction_type as "Transaction Type"
+				quantity as "Quantity"
+				transaction_date as "Transaction Date"
+				available_stock as "Available Stock"
+				minimum_stock_level as "Minimum Stock Level"
+				remarks as "Remarks"
+				supplier_name  as "Supplier Name"
+				cost_per_unit as "Cost Per Unit"
+				(
+					display = total,average,min,max	
+				)
+			)
+			conditional formatting
+			(
+				"New Formatting1"
+				{
+				condition = (transaction_type == "Adjustment")
+				fields = [transaction_type]
+				format = "color:#ffffff;background-color:#765f89;"
+				}
+				"New Formatting2"
+				{
+				condition = (transaction_type == "Outbound")
+				fields = [transaction_type]
+				format = "color:#000000;background-color:#1bbc9b;"
+				}
+				"New Formatting3"
+				{
+				condition = (transaction_type == "Return")
+				fields = [transaction_type]
+				format = "color:#ffffff;background-color:#e84c3d;"
+				}
+			)
+		}
+		kanban inventory_transaction_by_transaction_type
+		{
+			displayName = "Transaction Types"
+			show all rows from inventory_transaction    
+			(
+				transaction_id as "Transaction ID"
+				food_item as "Food Item"
+				transaction_type as "Transaction Type"
+				quantity as "Quantity"
+				transaction_date as "Transaction Date"
+				available_stock as "Available Stock"
+				minimum_stock_level as "Minimum Stock Level"
+				remarks as "Remarks"
+				supplier_name  as "Supplier Name"
+				cost_per_unit as "Cost Per Unit"
+				(
+					display = total,average,min,max	
+				)
+			)
+			options
+			(
+	 			display field = transaction_type
+	 		)
+		}
+		list customer_profile_Report
+		{
+			displayName = "All Customer Profiles"
+			show all rows from customer_profile    
+			(
+				customer_name  as "Customer Name"
+				email as "Email"
+				phone_number as "Phone Number"
+				address  as "Address"
+	 			(
+	      			enable = Link_to_Map,Show_As_Text
+	 			)
+				registration_date as "Registration Date"
+				customer_code as "Customer Code"
+				status as "Status"
+				department as "Department"
+				student_id as "Student ID"
+				staff_id as "Staff ID"
+			)
+			conditional formatting
+			(
+				"New Formatting1"
+				{
+				condition = (status == "Active")
+				fields = [status]
+				format = "color:#ffffff;background-color:#765f89;"
+				}
+				"New Formatting2"
+				{
+				condition = (status == "Inactive")
+				fields = [status]
+				format = "color:#000000;background-color:#1bbc9b;"
+				}
+				"New Formatting3"
+				{
+				condition = (status == "Pending")
+				fields = [status]
+				format = "color:#ffffff;background-color:#e84c3d;"
+				}
+			)
+		}
+		kanban customer_profile_by_status
+		{
+			displayName = "Statuses"
+			show all rows from customer_profile    
+			(
+				customer_name  as "Customer Name"
+				email as "Email"
+				phone_number as "Phone Number"
+				address  as "Address"
+	 			(
+	      			enable = Link_to_Map,Show_As_Text
+	 			)
+				registration_date as "Registration Date"
+				customer_code as "Customer Code"
+				status as "Status"
+				department as "Department"
+				student_id as "Student ID"
+				staff_id as "Staff ID"
+			)
+			options
+			(
+	 			display field = status
+	 		)
+		}
+		list food_type_Report
+		{
+			displayName = "All Food Types"
+			show all rows from food_type    
+			(
+				food_type_name as "Food Type Name"
+				description as "Description"
+				type_code as "Type Code"
+				dietary_category as "Dietary Category"
+				preparation_time as "Preparation Time"
+				is_available as "Is Available"
+				status as "Status"
+			)
+			conditional formatting
+			(
+				"New Formatting1"
+				{
+				condition = (dietary_category == "Veg")
+				fields = [dietary_category]
+				format = "color:#ffffff;background-color:#765f89;"
+				}
+				"New Formatting2"
+				{
+				condition = (dietary_category == "Vegan")
+				fields = [dietary_category]
+				format = "color:#000000;background-color:#1bbc9b;"
+				}
+			)
+		}
+		kanban food_type_by_dietary_category
+		{
+			displayName = "Dietary Categories"
+			show all rows from food_type    
+			(
+				food_type_name as "Food Type Name"
+				description as "Description"
+				type_code as "Type Code"
+				dietary_category as "Dietary Category"
+				preparation_time as "Preparation Time"
+				is_available as "Is Available"
+				status as "Status"
+			)
+			options
+			(
+	 			display field = dietary_category
+	 		)
+		}
+		list payment_record_Report
+		{
+			displayName = "All Payment Records"
+			show all rows from payment_record    
+			(
+				payment_id as "Payment ID"
+				related_order as "Related Order"
+				payment_date as "Payment Date"
+				amount as "Amount"
+				(
+					display = total,average,min,max	
+				)
+				payment_method as "Payment Method"
+				payment_status as "Payment Status"
+				transaction_reference as "Transaction Reference"
+				payer_name  as "Payer Name"
+				remarks as "Remarks"
+				receipt_url as "Receipt URL"
+			)
+			conditional formatting
+			(
+				"New Formatting1"
+				{
+				condition = (payment_method == "Card")
+				fields = [payment_method]
+				format = "color:#ffffff;background-color:#765f89;"
+				}
+				"New Formatting2"
+				{
+				condition = (payment_method == "Cash")
+				fields = [payment_method]
+				format = "color:#000000;background-color:#1bbc9b;"
+				}
+				"New Formatting3"
+				{
+				condition = (payment_method == "Wallet")
+				fields = [payment_method]
+				format = "color:#ffffff;background-color:#e84c3d;"
+				}
+			)
+		}
+		kanban payment_record_by_payment_method
+		{
+			displayName = "Payment Methods"
+			show all rows from payment_record    
+			(
+				payment_id as "Payment ID"
+				related_order as "Related Order"
+				payment_date as "Payment Date"
+				amount as "Amount"
+				(
+					display = total,average,min,max	
+				)
+				payment_method as "Payment Method"
+				payment_status as "Payment Status"
+				transaction_reference as "Transaction Reference"
+				payer_name  as "Payer Name"
+				remarks as "Remarks"
+				receipt_url as "Receipt URL"
+			)
+			options
+			(
+	 			display field = payment_method
+	 		)
+		}
+		list food_category_Report
+		{
+			displayName = "All Food Categories"
+			show all rows from food_category    
+			(
+				category_name as "Category Name"
+				description as "Description"
+				category_code as "Category Code"
+				is_vegetarian as "Is Vegetarian"
+				is_spicy as "Is Spicy"
+				allergen_info as "Allergen Info"
+				display_order as "Display Order"
+				status as "Status"
+			)
+		}
+	}
+	pages
+	{
+		page DashBoard
+		{
+			displayname = "Dashboard"
+			Content="<zml    \t\t\n\t\t\n\t\t\n\t\t\n\t\t\n>\n\t<layout>\n\t<row>\n\t<column\n   \t\t width='25%'\n   \t>\n\t<panel elementName='Panel 1'\n \n >\n\t<pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\tpadding = '0px'\n\tbgColor = '#F97164'\n\n\t\twidth = '100%'\n\t\thAlign = 'left'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\tpaddingTop = '20px'\n\tpaddingLeft = '20px'\n\tpaddingRight = '0px'\n\tpaddingBottom = '20px'\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\t\twidth = '64%'\n\t\thAlign = 'left'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t<pr \n\t>\n\t<pc \n\t\n>\n\t<text \n\n\tmarginLeft = '0px'\n\tmarginRight = '0px' \n\tmarginTop = '8px'\n\tcolor = '#FFFFFF'\n\tsize = '24px'\n\tbold = 'true' \n\ttype = 'Form Data'\n\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\n\tdisplayType = 'actual'\n\tdecimalPlaces = '2'\n\tthousandsSeperator = 'LOCALE'\n\tdecimalSeperator = 'DOT'\n\tnumberScale = 'none'\n\n\n\n\n\t  value = 'thisapp.food_menu.price.sum'\n>\n</text>\n\n</pc>\n</pr><pr \n\t>\n\t<pc \n\t\n>\n\t<text \n\n\tmarginLeft = '0px'\n\tmarginRight = '8px' \n\tmarginTop = '0px'\n\tcolor = '#FFFFFF'\n\tsize = '14px'\n\ttype = 'Text'\n\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\n\n\n\n\n\t  value = 'Total Prices'\n>\n</text>\n\n</pc>\n</pr>\n</pc>\n</pr>\n</pc><pc \n\t\tpadding = '20px'\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\t\twidth = '36%'\n\t\thAlign = 'right'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t<image  \n\t\tmarginLeft = '10px'\n\tmarginRight = '0px' \n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\n\tcolor = '#FFFFFF'\n\tbgColor = '#C75A50'\n\twidth = '40px'\n\theight = '40px'\n\ttype = 'icon'\n\tvalue = 'shopping-tag'\n\tsize = '22px'\n\tcornerRadius = '10px'\n\ticonType = 'outline'\n/>\n</pc>\n</pr>\n</pc>\n</pr>\n</pc>\n</pr>\n</panel>\n</column><column\n   \t\t width='24%'\n   \t>\n\t<panel elementName='Panel 2'\n \n >\n\t<pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\tpadding = '0px'\n\tbgColor = '#EEA131'\n\n\t\twidth = '100%'\n\t\thAlign = 'left'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\tpaddingTop = '20px'\n\tpaddingLeft = '20px'\n\tpaddingRight = '0px'\n\tpaddingBottom = '20px'\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\t\twidth = '65%'\n\t\thAlign = 'left'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\tpadding = '5px'\n\n>\n\t<pr \n\t>\n\t<pc \n\t\n>\n\t<text \n\n\tcolor = '#FFFFFF'\n\tsize = '24px'\n\tbold = 'true' \n\ttype = 'Form Data'\n\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\n\tdisplayType = 'actual'\n\tdecimalPlaces = '2'\n\tthousandsSeperator = 'LOCALE'\n\tdecimalSeperator = 'DOT'\n\tnumberScale = 'none'\n\n\n\n\n\t  value = 'thisapp.food_order.total_amount.sum'\n>\n</text>\n\n</pc>\n</pr><pr \n\t>\n\t<pc \n\t\n>\n\t<text \n\n\tcolor = '#FFFFFF'\n\tsize = '14px'\n\ttype = 'Text'\n\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\n\n\n\n\n\t  value = 'Total Total Amounts'\n>\n</text>\n\n</pc>\n</pr>\n</pc>\n</pr>\n</pc><pc \n\t\tpadding = '20px'\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\t\twidth = '35%'\n\t\thAlign = 'right'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t<image  \n\t\tmarginLeft = '10px'\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\n\tcolor = '#FFFFFF'\n\tbgColor = '#BE8127'\n\twidth = '40px'\n\theight = '40px'\n\ttype = 'icon'\n\tvalue = 'business-percentage-39'\n\tsize = '22px'\n\tcornerRadius = '10px'\n\ticonType = 'outline'\n/>\n</pc>\n</pr>\n</pc>\n</pr>\n</pc>\n</pr>\n</panel>\n</column><column\n   \t\t width='25%'\n   \t>\n\t<panel elementName='Panel 3'\n \n >\n\t<pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\tpadding = '0px'\n\tbgColor = '#00CFA9'\n\n\t\twidth = '100%'\n\t\thAlign = 'left'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\tpaddingTop = '20px'\n\tpaddingLeft = '20px'\n\tpaddingRight = '0px'\n\tpaddingBottom = '20px'\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\t\twidth = '65%'\n\t\thAlign = 'left'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\tpadding = '5px'\n\n>\n\t<pr \n\t>\n\t<pc \n\t\n>\n\t<text \n\n\tcolor = '#FFFFFF'\n\tsize = '24px'\n\tbold = 'true' \n\ttype = 'Form Data'\n\n\tbgColor = 'transparent'\n\n\n\tdisplayType = 'actual'\n\tdecimalPlaces = '2'\n\tthousandsSeperator = 'LOCALE'\n\tdecimalSeperator = 'DOT'\n\tnumberScale = 'none'\n\n\n\n\n\t  value = 'thisapp.order_item.tax_amount.sum'\n>\n</text>\n\n</pc>\n</pr><pr \n\t>\n\t<pc \n\t\n>\n\t<text \n\n\tcolor = '#FFFFFF'\n\tsize = '14px'\n\ttype = 'Text'\n\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\n\n\n\n\n\t  value = 'Total Tax Amounts'\n>\n</text>\n\n</pc>\n</pr>\n</pc>\n</pr>\n</pc><pc \n\t\tpadding = '20px'\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\t\twidth = '35%'\n\t\thAlign = 'right'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t<image  \n\t\tmarginLeft = '10px'\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\n\tcolor = '#FFFFFF'\n\tbgColor = '#0BA385'\n\twidth = '40px'\n\theight = '40px'\n\ttype = 'icon'\n\tvalue = 'business-money-coins'\n\tsize = '22px'\n\tcornerRadius = '10px'\n\ticonType = 'outline'\n/>\n</pc>\n</pr>\n</pc>\n</pr>\n</pc>\n</pr>\n</panel>\n</column><column\n   \t\t width='26%'\n   \t>\n\t<panel elementName='Panel 4'\n \n >\n\t<pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\tpadding = '0px'\n\tbgColor = '#3E99DE'\n\n\t\twidth = '100%'\n\t\thAlign = 'left'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\tpaddingTop = '20px'\n\tpaddingLeft = '20px'\n\tpaddingRight = '0px'\n\tpaddingBottom = '20px'\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\t\twidth = '65%'\n\t\thAlign = 'left'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\tpadding = '5px'\n\n>\n\t<pr \n\t>\n\t<pc \n\t\n>\n\t<text \n\n\tcolor = '#FFFFFF'\n\tsize = '24px'\n\tbold = 'true' \n\ttype = 'Form Data'\n\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\n\tdisplayType = 'actual'\n\tdecimalPlaces = '2'\n\tthousandsSeperator = 'LOCALE'\n\tdecimalSeperator = 'DOT'\n\tnumberScale = 'none'\n\n\n\n\n\t  value = 'thisapp.order_item.line_total.sum'\n>\n</text>\n\n</pc>\n</pr><pr \n\t>\n\t<pc \n\t\n>\n\t<text \n\n\tcolor = '#FFFFFF'\n\tsize = '14px'\n\ttype = 'Text'\n\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\n\n\n\n\n\t  value = 'Total Line Totals'\n>\n</text>\n\n</pc>\n</pr>\n</pc>\n</pr>\n</pc><pc \n\t\tpadding = '20px'\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\t\twidth = '35%'\n\t\thAlign = 'right'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t<image  \n\t\tmarginLeft = '10px'\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\n\tcolor = '#FFFFFF'\n\tbgColor = '#0E78C9'\n\twidth = '40px'\n\theight = '40px'\n\ttype = 'icon'\n\tvalue = 'media-1-volume-up'\n\tsize = '22px'\n\tcornerRadius = '10px'\n\ticonType = 'outline'\n/>\n</pc>\n</pr>\n</pc>\n</pr>\n</pc>\n</pr>\n</panel>\n</column>\n</row><row>\n\t<column\n   \t\t width='100%'\n   \t>\n\t<panel elementName='Grouped_Panel 1'\n \n\t\n\ttitle = 'Availability Status'\n\t\n\t\ttitleSize = '15px'\n            boldTitle = 'true'\n >\n\t<pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\tpadding = '0px'\n\tbgColor = '#FFFFFF'\n\n\t\twidth = '100%'\n\t\thAlign = 'left'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\tpadding = '20px'\n\tbgColor = '#FFFFFF'\n\n\t\twidth = '25%'\n\t\thAlign = 'center'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t<image  \n\t\tmarginLeft = '0px'\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\n\tcolor = '#FFFFFF'\n\tbgColor = '#F97164'\n\twidth = '40px'\n\theight = '40px'\n\ttype = 'icon'\n\tvalue = 'food-egg'\n\tsize = '22px'\n\tcornerRadius = '20px'\n\ticonType = 'outline'\n/>\n</pc><pc \n\t\tpaddingLeft = '10px'\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\t\thAlign = 'left'\n>\n\t<pr \n\t>\n\t<pc \n\t\n>\n\t<text \n\n\tmarginLeft = '10px'\n\tmarginRight = '0px' \n\tmarginBottom = '0px'\n\tcolor = '#C75A50'\n\tsize = '28px'\n\tbold = 'true' \n\ttype = 'Form Data'\n\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\n\tdisplayType = 'actual'\n\tthousandsSeperator = 'LOCALE'\n\tdecimalSeperator = 'DOT'\n\tnumberScale = 'none'\n\n\n\n\n\t\tcriteria = 'availability_status == &quot;Out of Stock&quot;'\n\t  value = 'thisapp.food_menu.availability_status.count'\n>\n</text>\n\n</pc>\n</pr><pr \n\t>\n\t<pc \n\t\n>\n\t<text \n\n\tmarginLeft = '10px'\n\tcolor = '#595959'\n\tsize = '14px'\n\ttype = 'Text'\n\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\n\n\n\n\n\t  value = 'Out of Stock'\n>\n</text>\n\n</pc>\n</pr>\n</pc>\n</pr>\n</pc><pc \n\t\tpadding = '20px'\n\tbgColor = '#FFFFFF'\n\n\t\twidth = '25%'\n\t\thAlign = 'center'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t<image  \n\t\tmarginLeft = '0px'\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\n\tcolor = '#FFFFFF'\n\tbgColor = '#EEA131'\n\twidth = '40px'\n\theight = '40px'\n\ttype = 'icon'\n\tvalue = 'objects-skull'\n\tsize = '22px'\n\tcornerRadius = '20px'\n\ticonType = 'outline'\n/>\n</pc><pc \n\t\tpaddingLeft = '10px'\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\t\thAlign = 'left'\n>\n\t<pr \n\t>\n\t<pc \n\t\n>\n\t<text \n\n\tmarginLeft = '10px'\n\tmarginRight = '0px' \n\tcolor = '#BE8127'\n\tsize = '28px'\n\tbold = 'true' \n\ttype = 'Form Data'\n\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\n\tdisplayType = 'actual'\n\tthousandsSeperator = 'LOCALE'\n\tdecimalSeperator = 'DOT'\n\tnumberScale = 'none'\n\n\n\n\n\t\tcriteria = 'availability_status == &quot;Coming Soon&quot;'\n\t  value = 'thisapp.food_menu.availability_status.count'\n>\n</text>\n\n</pc>\n</pr><pr \n\t>\n\t<pc \n\t\n>\n\t<text \n\n\tmarginLeft = '10px'\n\tmarginRight = '0px' \n\tmarginTop = '0px'\n\tcolor = '#595959'\n\tsize = '14px'\n\ttype = 'Text'\n\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\n\n\n\n\n\t  value = 'Coming Soon'\n>\n</text>\n\n</pc>\n</pr>\n</pc>\n</pr>\n</pc><pc \n\t\tpadding = '20px'\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\t\twidth = '25%'\n\t\thAlign = 'center'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t<image  \n\t\tmarginLeft = '0px'\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\n\tcolor = '#FFFFFF'\n\tbgColor = '#00CFA9'\n\twidth = '40px'\n\theight = '40px'\n\ttype = 'icon'\n\tvalue = 'tech-ram'\n\tsize = '22px'\n\tcornerRadius = '20px'\n\ticonType = 'outline'\n/>\n</pc><pc \n\t\tpaddingLeft = '10px'\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\t\thAlign = 'left'\n>\n\t<pr \n\t>\n\t<pc \n\t\n>\n\t<text \n\n\tmarginLeft = '10px'\n\tmarginRight = '0px' \n\tcolor = '#0BA385'\n\tsize = '28px'\n\tbold = 'true' \n\ttype = 'Form Data'\n\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\n\tdisplayType = 'actual'\n\tthousandsSeperator = 'LOCALE'\n\tdecimalSeperator = 'DOT'\n\tnumberScale = 'none'\n\n\n\n\n\t\tcriteria = 'availability_status == &quot;Available&quot;'\n\t  value = 'thisapp.food_menu.availability_status.count'\n>\n</text>\n\n</pc>\n</pr><pr \n\t>\n\t<pc \n\t\n>\n\t<text \n\n\tmarginLeft = '10px'\n\tmarginRight = '0px' \n\tmarginTop = '0px'\n\tcolor = '#595959'\n\tsize = '14px'\n\ttype = 'Text'\n\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\n\n\n\n\n\t  value = 'Available'\n>\n</text>\n\n</pc>\n</pr>\n</pc>\n</pr>\n</pc><pc \n\t\tpadding = '20px'\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\t\twidth = '25%'\n\t\thAlign = 'center'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t<image  \n\t\tmarginLeft = '0px'\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\n\tcolor = '#FFFFFF'\n\tbgColor = '#3E99DE'\n\twidth = '40px'\n\theight = '40px'\n\ttype = 'icon'\n\tvalue = 'furniture-fridge'\n\tsize = '22px'\n\tcornerRadius = '20px'\n\ticonType = 'outline'\n/>\n</pc><pc \n\t\tpaddingLeft = '10px'\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\t\thAlign = 'left'\n>\n\t<pr \n\t>\n\t<pc \n\t\n>\n\t<text \n\n\tmarginLeft = '10px'\n\tmarginRight = '0px' \n\tcolor = '#0E78C9'\n\tsize = '28px'\n\tbold = 'true' \n\ttype = 'Form Data'\n\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\n\tdisplayType = 'actual'\n\tthousandsSeperator = 'LOCALE'\n\tdecimalSeperator = 'DOT'\n\tnumberScale = 'none'\n\n\n\n\n\t  value = 'thisapp.food_menu.availability_status.count'\n>\n</text>\n\n</pc>\n</pr><pr \n\t>\n\t<pc \n\t\n>\n\t<text \n\n\tmarginLeft = '10px'\n\tmarginRight = '0px' \n\tmarginTop = '0px'\n\tcolor = '#595959'\n\tsize = '14px'\n\ttype = 'Text'\n\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\n\n\n\n\n\t  value = 'Total'\n>\n</text>\n\n</pc>\n</pr>\n</pc>\n</pr>\n</pc>\n</pr>\n</pc>\n</pr>\n</panel>\n</column>\n</row><row>\n\t<column\n   \t\t width='24%'\n   \t>\n\t<panel elementName='Panel_Button 1'\n \n\t\n\ttitle = 'Quick Links'\n\t\n\t\ttitleSize = '15px'\n            boldTitle = 'true'\n >\n\t<pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\tbgColor = '#CB6711'\n\n\t\twidth = '2%'\n\t\thAlign = 'left'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t\n</pc>\n</pr>\n</pc><pc \n\t\tpaddingTop = '10px'\n\tpaddingLeft = '0px'\n\tpaddingRight = '0px'\n\tpaddingBottom = '10px'\n\tbgColor = '#FFFFFF'\n\n    action = 'OpenForm'\n\t\tcomponentLinkName = 'food_menu'\n\t\ttarget = 'new-window'\n\t\twidth = '98%'\n\t\thAlign = 'center'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t<image  \n\t\tmarginLeft = '0px'\n\tmarginRight = '6px' \n\n\tcolor = '#3F3F3F'\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\twidth = '40px'\n\theight = '40px'\n\ttype = 'icon'\n\tvalue = 'ui-2-square-add-08'\n\tsize = '14px'\n\tcornerRadius = '20px'\n\ticonType = 'outline'\n/>\n</pc><pc \n\t\n>\n\t<text \n\n\tcolor = '#595959'\n\tsize = '14px'\n\ttype = 'Text'\n\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\n\n\n\n\n\t  value = 'Add New Food Menu'\n>\n</text>\n\n</pc>\n</pr>\n</pc>\n</pr>\n</panel>\n</column><column\n   \t\t width='27%'\n   \t>\n\t<panel elementName='Panel_Button 2'\n \n >\n\t<pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\tbgColor = '#CB6711'\n\n\t\twidth = '2%'\n\t\thAlign = 'left'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t\n</pc>\n</pr>\n</pc><pc \n\t\tpaddingTop = '10px'\n\tpaddingLeft = '0px'\n\tpaddingRight = '0px'\n\tpaddingBottom = '10px'\n\tbgColor = '#FFFFFF'\n\n    action = 'OpenForm'\n\t\tcomponentLinkName = 'food_order'\n\t\ttarget = 'new-window'\n\t\twidth = '98%'\n\t\thAlign = 'center'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t<image  \n\t\tmarginLeft = '0px'\n\tmarginRight = '6px' \n\n\tcolor = '#3F3F3F'\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\twidth = '40px'\n\theight = '40px'\n\ttype = 'icon'\n\tvalue = 'ui-2-square-add-08'\n\tsize = '14px'\n\tcornerRadius = '20px'\n\ticonType = 'outline'\n/>\n</pc><pc \n\t\n>\n\t<text \n\n\tcolor = '#3F3F3F'\n\tsize = '14px'\n\ttype = 'Text'\n\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\n\n\n\n\n\t  value = 'Add New Food Order'\n>\n</text>\n\n</pc>\n</pr>\n</pc>\n</pr>\n</panel>\n</column><column\n   \t\t width='25%'\n   \t>\n\t<panel elementName='Panel_Button 3'\n \n >\n\t<pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\tbgColor = '#CB6711'\n\n\t\twidth = '2%'\n\t\thAlign = 'left'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t\n</pc>\n</pr>\n</pc><pc \n\t\tpaddingTop = '10px'\n\tpaddingLeft = '0px'\n\tpaddingRight = '0px'\n\tpaddingBottom = '10px'\n\tbgColor = '#FFFFFF'\n\n    action = 'OpenForm'\n\t\tcomponentLinkName = 'order_item'\n\t\ttarget = 'new-window'\n\t\twidth = '98%'\n\t\thAlign = 'center'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t<image  \n\t\tmarginLeft = '0px'\n\tmarginRight = '6px' \n\n\tcolor = '#3F3F3F'\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\twidth = '40px'\n\theight = '40px'\n\ttype = 'icon'\n\tvalue = 'ui-2-square-add-08'\n\tsize = '14px'\n\tcornerRadius = '20px'\n\ticonType = 'outline'\n/>\n</pc><pc \n\t\n>\n\t<text \n\n\tcolor = '#3F3F3F'\n\tsize = '14px'\n\ttype = 'Text'\n\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\n\n\n\n\n\t  value = 'Add New Order Item'\n>\n</text>\n\n</pc>\n</pr>\n</pc>\n</pr>\n</panel>\n</column><column\n   \t\t width='24%'\n   \t>\n\t<panel elementName='Panel_Button 4'\n \n >\n\t<pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\tbgColor = '#CB6711'\n\n\t\twidth = '2%'\n\t\thAlign = 'left'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t\n</pc>\n</pr>\n</pc><pc \n\t\tpaddingTop = '10px'\n\tpaddingLeft = '0px'\n\tpaddingRight = '0px'\n\tpaddingBottom = '10px'\n\tbgColor = '#FFFFFF'\n\n    action = 'OpenForm'\n\t\tcomponentLinkName = 'inventory_transaction'\n\t\ttarget = 'new-window'\n\t\twidth = '98%'\n\t\thAlign = 'center'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t<image  \n\t\tmarginLeft = '0px'\n\tmarginRight = '6px' \n\n\tcolor = '#3F3F3F'\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\twidth = '40px'\n\theight = '40px'\n\ttype = 'icon'\n\tvalue = 'ui-2-square-add-08'\n\tsize = '14px'\n\tcornerRadius = '20px'\n\ticonType = 'outline'\n/>\n</pc><pc \n\t\n>\n\t<text \n\n\tcolor = '#3F3F3F'\n\tsize = '14px'\n\ttype = 'Text'\n\n\tbgColor = 'rgba(0, 0, 0, 0)'\n\n\n\n\n\n\n\t  value = 'Add New Inventory Transaction'\n>\n</text>\n\n</pc>\n</pr>\n</pc>\n</pr>\n</panel>\n</column>\n</row><row>\n\t<column\n   \t\t width='50%'\n   \t>\n\t<chart \n\telementName='Chart 1'\n\n\t\n\ttitle = 'Quantity by Line Total'\n\t\n\t\ttitleSize = '16px'\n\ttype = 'Scatter'\n\txtitle = 'Quantity'\n\tytitle = 'Line Total'\n\tbgColor = 'rgb(255, 255, 255)'\n\ttheme = '#f37d16'\n\tlegendPos = 'none'\n\theightType = 'auto'\n\theightValue = '300px'\n\tappLinkName = 'thisapp'\n\tformLinkName = 'order_item'\n\txfield = 'quantity'\n\tyfields = 'value:line_total'\n\tgroupBy = 'item_number'\n\t\tDelugeCriteria = 'quantity is not null'\n/>\n\n</column><column\n   \t\t width='50%'\n   \t>\n\t<chart \n\telementName='Chart 2'\n\n\t\n\ttitle = 'Order Status by Total Amount'\n\t\n\t\ttitleSize = '16px'\n\ttype = 'Bar'\n\txtitle = 'Order Status'\n\tytitle = 'Total Amount'\n\tbgColor = 'rgb(255, 255, 255)'\n\ttheme = 'theme1'\n\tlegendPos = 'none'\n\theightType = 'auto'\n\theightValue = '300px'\n\tappLinkName = 'thisapp'\n\tformLinkName = 'food_order'\n\txfield = 'order_status'\n\tyfields = 'sum:total_amount'\n\tgroupBy = 'order_id'\n\t\tDelugeCriteria = 'order_status is not null &amp;&amp; order_status != &quot;&quot;'\n/>\n\n</column>\n</row><row>\n\t<column\n   \t\t width='100%'\n   \t>\n\t<report \n\telementName='Report'\n\n\t\tappLinkName = 'thisapp'\n\t\tlinkName = 'food_menu_Report'\n\t\n\t\tiszreport = 'false'\n\t\t\t\t\tzc_AddRec = 'false'\n\t\t\t\t\tzc_EditRec = 'false'\n\t\t\t\t\tzc_Print = 'false'\n\t\t\t\t\tzc_Export = 'false'\n\t\t\t\t\tzc_DelRec = 'false'\n\t\t\t\t\tzc_DuplRec = 'false'\n\t\t\t\t\tzc_Search = 'false'\n\t\t\t\t\tzc_EditBulkRec = 'false'\n\t\t\t\t\tzc_BulkDelete = 'false'\n\t\t\t\t\tzc_BulkDuplicate = 'false'\n\theightType = 'auto'\n\theightValue = '700'\n/>\n</column>\n</row>\n</layout>\n</zml>"
+		}
+	}
+
+
+
+
+		workflow
+		{
+		form
+		{
+			auto_generate_customer_code as "Auto-Generate Customer Code"
+			{
+				type =  form
+				form = customer_profile
+
+				record event = on add
+
+				on load
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											// Auto-generate unique customer code upon new profile creation
+										// Check if this is a new record creation (ID is null)
+										if(input.ID.isNull())
+										{
+											// Get current date and time for uniqueness
+											currentDateTime = now;
+											// Get current user's email for uniqueness
+											currentUserEmail = zoho.loginuserid;
+											// Extract first 3 characters of email for code prefix
+											emailPrefix = currentUserEmail.substring(0,3);
+											// Generate timestamp-based unique identifier
+											timestamp = currentDateTime.toString("yyyyMMddHHmmss");
+											// Combine email prefix and timestamp for unique code
+											customerCode = "CUST_".concat(emailPrefix).concat(timestamp);
+											// Set the generated customer code to the form field
+											input.customer_code = customerCode;
+										}
+						)
+					}
+				}
+
+			}
+			validate_order_payment_status as "Validate Order Payment Status"
+			{
+				type =  form
+				form = payment_record
+
+				record event = on add or edit
+
+				on validate
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											// Check if payment status is failed and cancel submission with alert
+										if(input.payment_status.equals("Failed"))
+										{
+											alert(payment_status,"Cannot submit order with failed payment status. Please resolve the payment issue first.");
+											cancel submit;
+										}
+						)
+					}
+				}
+
+			}
+			Auto_Generate_Item_Number as "Auto Generate Item Number"
+			{
+				type =  form
+				form = order_item
+
+				record event = on add
+
+				on success
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											Item_Number = "ITM-" + input.ID.toString();
+						)
+					}
+				}
+
+			}
+			Automatic_Bill_Calculatio as "Automatic Bill Calculation"
+			{
+				type =  form
+				form = order_item
+
+				record event = on add or edit
+
+				on success
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											input.line_total = input.unit_price * input.quantity;
+						)
+					}
+				}
+
+			}
+			Fetch_Food_PriceZ as "Fetch Food PriceZ"
+			{
+				type =  form
+				form = order_item
+
+				record event = on add or edit
+
+				on user input of food_item
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											food_record = food_menu[ID == input.food_item];
+										input.unit_price = food_record.price;
+						)
+					}
+				}
+
+			}
+			Calculate_Line_Total as "Calculate Line Total"
+			{
+				type =  form
+				form = order_item
+
+				record event = on add
+
+				on user input of quantity
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											input.line_total = input.unit_price * input.quantity;
+						)
+					}
+				}
+
+			}
+			Calculate_Final_Order_Bil as "Calculate Final Order Bill"
+			{
+				type =  form
+				form = order_item
+
+				record event = on add or edit
+
+				on success
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											total = 0;
+										for each  item in order_item[related_order == input.related_order]
+										{
+											total = total + ifnull(item.line_total,0);
+										}
+										order_record = food_order[ID == input.related_order];
+										if(order_record.count() > 0)
+										{
+											order_record.total_amount=total;
+										}
+						)
+					}
+				}
+
+			}
+			Send_Order_Confirmation_E as "Send Order Confirmation Email"
+			{
+				type =  form
+				form = food_order
+
+				record event = on add
+
+				on success
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											sendmail
+										[
+											from :zoho.adminuserid
+											to :input.customer.email
+											subject :"Your Canteen Order Confirmation"
+											message :"Your order " + input.order_id + " has been successfully placed. Thank you for ordering!"
+										]
+						)
+					}
+				}
+
+			}
+			Payment_Confirmation_Emai as "Payment Confirmation Email"
+			{
+				type =  form
+				form = payment_record
+
+				record event = on add
+
+				on success
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											order_record = food_order[ID == input.related_order];
+										if(order_record.count() > 0)
+										{
+											customer_record = customer_profile[ID == order_record.customer];
+											if(customer_record.count() > 0)
+											{
+												sendmail
+												[
+													from :zoho.adminuserid
+													to :"sankaragomathi.r.2024.cse@rajalakshmi.edu.in"
+													subject :"payment confirmation"
+													message :"your payment has been received successfully. thank you for using our college canteen!"
+												]
+											}
+										}
+						)
+					}
+				}
+
+			}
+			Notify_Admin_on_New_Order1 as "Notify Admin on New Order"
+			{
+				type =  form
+				form = food_order
+
+				record event = on add
+
+				on success
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											sendmail
+										[
+											from :zoho.adminuserid
+											to :"sankaragomathi.r.2024.cse@rajalakshmi.edu.in"
+											subject :"new food order received"
+											message :"a new food order has been placed. order record id: " + input.ID.toString() + ". total amount: " + input.total_amount.toString()
+										]
+						)
+					}
+				}
+
+			}
+			low_stock_alert as "low_stock_alert"
+			{
+				type =  form
+				form = inventory_transaction
+
+				record event = on add or edit
+
+				on success
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											if(input.available_stock <= input.minimum_stock_level)
+										{
+											sendmail
+											[
+												from :zoho.adminuserid
+												to :"sankaragomathi.r.2024.cse@rajalakshmi.edu.in"
+												subject :"low stock alert"
+												message :"low stock alert! the available stock has reached the minimum stock level. please restock the item."
+											]
+										}
+						)
+					}
+				}
+
+			}
+		}
+
+		schedule
+		{
+			notify_low_stock_alert as "Notify Low Stock Alert"
+			{
+				type =  schedule
+				form = inventory_transaction
+					status = inactive
+				start = transaction_date
+				time zone = "Asia/Kolkata"
+				on start
+				{
+					actions 
+					{
+					on load
+					(
+						// Check if available stock is below minimum stock level
+										if(input.available_stock < input.minimum_stock_level)
+										{
+											// Prepare email details
+											emailSubject = "Inventory Alert: Low Stock";
+											emailMessage = "Dear Team,\n\n";
+											emailMessage = emailMessage.concat("The inventory has dropped below the minimum level.\n");
+											emailMessage = emailMessage.concat("Current Stock: ").concat(input.available_stock.toString()).concat("\n");
+											emailMessage = emailMessage.concat("Minimum Level: ").concat(input.minimum_stock_level.toString()).concat("\n");
+											emailMessage = emailMessage.concat("Transaction ID: ").concat(input.transaction_id);
+											// Send email alert
+											sendmail
+											[
+												from :zoho.loginuserid
+												to :zoho.loginuserid
+												subject :emailSubject
+												message :emailMessage
+											]
+										}
+					)
+					}
+				}
+			}
+		}
+
+
+		blueprint
+		{
+    			food_order_lifecycle as "Food Order Lifecycle"
+    			{
+        			type = Blueprint
+        			form = food_order
+        			start
+        			{
+            			start stage = "Order Created"
+        			}
+        			stages
+        			{
+           			"Order Created"
+           			{
+           			}
+           			"Order Pending Payment"
+           			{
+           			}
+           			"Order Cancelled"
+           			{
+           			}
+           			"Order Confirmed"
+           			{
+           			}
+           			"Order On Hold"
+           			{
+           			}
+           			"Order Processing"
+           			{
+           			}
+           			"Order Ready for Pickup"
+           			{
+           			}
+           			"Order Shipped"
+           			{
+           			}
+           			"Order Delivered"
+           			{
+           			}
+           			"Order Returned"
+           			{
+           			}
+           			"Order Lost"
+           			{
+           			}
+           			"Order Closed"
+           			{
+           			}
+           			"Order Refunded"
+           			{
+           			}
+           			"Order Replacement Shipped"
+           			{
+           			}
+        			}
+        			transitions
+        			{
+    				cancel_order as "Cancel Order"
+    				{
+         				type = normal
+         				from stage = "Order Created"
+         				to stage = "Order Cancelled"
+         				before
+         				{
+         				}
+         				after
+         				{
+         				}
+  				}
+    				close_order as "Close Order"
+    				{
+         				type = normal
+         				from stage = "Order Delivered"
+         				to stage = "Order Closed"
+         				before
+         				{
+         				}
+         				after
+         				{
+         				}
+  				}
+    				confirm_delivery as "Confirm Delivery"
+    				{
+         				type = normal
+         				from stage = "Order Shipped"
+         				to stage = "Order Delivered"
+         				before
+         				{
+         				}
+         				after
+         				{
+         				}
+  				}
+    				confirm_payment as "Confirm Payment"
+    				{
+         				type = normal
+         				from stage = "Order Pending Payment"
+         				to stage = "Order Confirmed"
+         				before
+         				{
+         				}
+         				after
+         				{
+         				}
+  				}
+    				confirm_replacement_delivery as "Confirm Delivery of Replacement"
+    				{
+         				type = normal
+         				from stage = "Order Replacement Shipped"
+         				to stage = "Order Delivered"
+         				before
+         				{
+         				}
+         				after
+         				{
+         				}
+  				}
+    				dispatch_order as "Dispatch Order"
+    				{
+         				type = normal
+         				from stage = "Order Ready for Pickup"
+         				to stage = "Order Shipped"
+         				before
+         				{
+         				}
+         				after
+         				{
+         				}
+  				}
+    				hold_order as "Place Order On Hold"
+    				{
+         				type = normal
+         				from stage = "Order Pending Payment"
+         				to stage = "Order On Hold"
+         				before
+         				{
+         				}
+         				after
+         				{
+         				}
+  				}
+    				initiate_return as "Initiate Return Process"
+    				{
+         				type = normal
+         				from stage = "Order Shipped"
+         				to stage = "Order Returned"
+         				before
+         				{
+         				}
+         				after
+         				{
+         				}
+  				}
+    				mark_lost as "Mark Order as Lost"
+    				{
+         				type = normal
+         				from stage = "Order Shipped"
+         				to stage = "Order Lost"
+         				before
+         				{
+         				}
+         				after
+         				{
+         				}
+  				}
+    				mark_ready as "Mark Order as Ready"
+    				{
+         				type = normal
+         				from stage = "Order Processing"
+         				to stage = "Order Ready for Pickup"
+         				before
+         				{
+         				}
+         				after
+         				{
+         				}
+  				}
+    				process_refund as "Process Refund"
+    				{
+         				type = normal
+         				from stage = "Order Returned"
+         				to stage = "Order Refunded"
+         				before
+         				{
+         				}
+         				after
+         				{
+         				}
+  				}
+    				refund_lost_order as "Process Refund for Lost Order"
+    				{
+         				type = normal
+         				from stage = "Order Lost"
+         				to stage = "Order Refunded"
+         				before
+         				{
+         				}
+         				after
+         				{
+         				}
+  				}
+    				resume_processing as "Resume Order Processing"
+    				{
+         				type = normal
+         				from stage = "Order On Hold"
+         				to stage = "Order Processing"
+         				before
+         				{
+         				}
+         				after
+         				{
+         				}
+  				}
+    				ship_replacement as "Ship Replacement Order"
+    				{
+         				type = normal
+         				from stage = "Order Returned"
+         				to stage = "Order Replacement Shipped"
+         				before
+         				{
+         				}
+         				after
+         				{
+         				}
+  				}
+    				start_processing as "Start Order Processing"
+    				{
+         				type = normal
+         				from stage = "Order Confirmed"
+         				to stage = "Order Processing"
+         				before
+         				{
+         				}
+         				after
+         				{
+         				}
+  				}
+    				submit_payment as "Submit Order for Payment"
+    				{
+         				type = normal
+         				from stage = "Order Created"
+         				to stage = "Order Pending Payment"
+         				before
+         				{
+         				}
+         				after
+         				{
+         				}
+  				}
+        			}
+    			}
+		}
+
+
+	}
+	share_settings
+	{
+			"Read"
+			{
+				name = "Read"
+				type = Users_Permissions
+				permissions = {Chat:true, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "This profile will have read permission for all components\n"
+			}
+			"Write"
+			{
+				name = "Write"
+				type = Users_Permissions
+				permissions = {Chat:true, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "This profile will have write permission for all components\n"
+			}
+			"Canteen Manager"
+			{
+				name = "Canteen Manager"
+				type = Users_Permissions
+				permissions = {Chat:false, Predefined:false, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "Oversee daily operations and manage customer profiles including student and staff data \n"
+				ModulePermissions
+				{
+					customer_profile
+					{
+						enabled= Create,Viewall,Modifyall,Import,Export,Tab 
+						allFieldsVisible= true 
+						ReportPermissions
+						{
+							customer_profile_Report={"View","Edit","Delete"}
+							customer_profile_by_status={"View","Edit","Delete"}
+						}
+					}
+					food_order
+					{
+						enabled= Create,Viewall,Modifyall,Import,Export,Tab 
+						allFieldsVisible= true 
+						ReportPermissions
+						{
+							food_order_by_order_status={"View","Edit","Delete"}
+							food_order_Report={"View","Edit","Delete"}
+						}
+					}
+					food_menu
+					{
+						enabled= Create,Viewall,Modifyall,Import,Export,Tab 
+						allFieldsVisible= true 
+						ReportPermissions
+						{
+							food_menu_by_availability_status={"View","Edit","Delete"}
+							food_menu_Report={"View","Edit","Delete"}
+						}
+					}
+					inventory_transaction
+					{
+						enabled= Viewall,Modifyall 
+						allFieldsVisible= true 
+						ReportPermissions
+						{
+							inventory_transaction_Report={"View","Edit","Delete"}
+							inventory_transaction_by_transaction_type={"View","Edit","Delete"}
+						}
+					}
+					payment_record
+					{
+						enabled= Create,Viewall,Modifyall,Import,Export,Tab 
+						allFieldsVisible= true 
+						ReportPermissions
+						{
+							payment_record_by_payment_method={"View","Edit","Delete"}
+							payment_record_Report={"View","Edit","Delete"}
+						}
+					}
+				}
+			}
+			"Administrator"
+			{
+				name = "Administrator"
+				type = Users_Permissions
+				permissions = {Chat:true, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "This profile will have all the permissions.\n"
+			}
+			"Inventory Controller"
+			{
+				name = "Inventory Controller"
+				type = Users_Permissions
+				permissions = {Chat:false, Predefined:false, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "Track inbound and outbound stock movements for all food items \n"
+				ModulePermissions
+				{
+					food_order
+					{
+						enabled= Viewall 
+						allFieldsVisible= true 
+						ReportPermissions
+						{
+							food_order_by_order_status={"View"}
+							food_order_Report={"View"}
+						}
+					}
+					food_menu
+					{
+						enabled= Viewall,Modifyall 
+						allFieldsVisible= true 
+						ReportPermissions
+						{
+							food_menu_by_availability_status={"View","Edit","Delete"}
+							food_menu_Report={"View","Edit","Delete"}
+						}
+					}
+					inventory_transaction
+					{
+						enabled= Create,Viewall,Modifyall,Import,Export,Tab 
+						allFieldsVisible= true 
+						ReportPermissions
+						{
+							inventory_transaction_Report={"View","Edit","Delete"}
+							inventory_transaction_by_transaction_type={"View","Edit","Delete"}
+						}
+					}
+				}
+			}
+			"Developer"
+			{
+				name = "Developer"
+				type = Developer
+				permissions = {Chat:false, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "Developer Profile\n"
+			}
+			"Cashier"
+			{
+				name = "Cashier"
+				type = Users_Permissions
+				permissions = {Chat:false, Predefined:false, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "Process payments using various methods like cash, card, or wallet \n"
+				ModulePermissions
+				{
+					customer_profile
+					{
+						allFieldsVisible= true 
+						ReportPermissions
+						{
+							customer_profile_Report={"View"}
+							customer_profile_by_status={"View"}
+						}
+					}
+					food_order
+					{
+						allFieldsVisible= true 
+						ReportPermissions
+						{
+							food_order_by_order_status={"View","Edit"}
+							food_order_Report={"View","Edit"}
+						}
+					}
+					payment_record
+					{
+						enabled= Create,Viewall,Modifyall,Import,Export,Tab 
+						allFieldsVisible= true 
+						ReportPermissions
+						{
+							payment_record_by_payment_method={"View","Edit","Delete"}
+							payment_record_Report={"View","Edit","Delete"}
+						}
+					}
+				}
+			}
+			"Kitchen Staff"
+			{
+				name = "Kitchen Staff"
+				type = Users_Permissions
+				permissions = {Chat:false, Predefined:false, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "Update food preparation times and mark items as out of stock \n"
+				ModulePermissions
+				{
+					food_order
+					{
+						enabled= Viewall,Modifyall 
+						allFieldsVisible= true 
+						ReportPermissions
+						{
+							food_order_by_order_status={"View","Edit","Delete"}
+							food_order_Report={"View","Edit","Delete"}
+						}
+					}
+					food_menu
+					{
+						enabled= Viewall,Modifyall 
+						allFieldsVisible= true 
+						ReportPermissions
+						{
+							food_menu_by_availability_status={"View","Edit","Delete"}
+							food_menu_Report={"View","Edit","Delete"}
+						}
+					}
+					inventory_transaction
+					{
+						enabled= Viewall,Modifyall 
+						allFieldsVisible= true 
+						ReportPermissions
+						{
+							inventory_transaction_Report={"View","Edit","Delete"}
+							inventory_transaction_by_transaction_type={"View","Edit","Delete"}
+						}
+					}
+				}
+			}
+			"Staff Member"
+			{
+				name = "Staff Member"
+				type = Customer_Portal
+				permissions = {Chat:false, Predefined:false, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "Access the canteen menu and submit orders using staff identification \n"
+				ModulePermissions
+				{
+					customer_profile
+					{
+						allFieldsVisible= true 
+						ReportPermissions
+						{
+							customer_profile_Report={"View","Edit"}
+							customer_profile_by_status={"View","Edit"}
+						}
+					}
+					food_order
+					{
+						allFieldsVisible= true 
+						ReportPermissions
+						{
+							food_order_by_order_status={"View","Edit"}
+							food_order_Report={"View","Edit"}
+						}
+					}
+					food_menu
+					{
+						allFieldsVisible= true 
+						ReportPermissions
+						{
+							food_menu_by_availability_status={"View","Edit"}
+							food_menu_Report={"View","Edit"}
+						}
+					}
+					payment_record
+					{
+						allFieldsVisible= true 
+						ReportPermissions
+						{
+							payment_record_by_payment_method={"View","Edit"}
+							payment_record_Report={"View","Edit"}
+						}
+					}
+				}
+			}
+			"Student"
+			{
+				name = "Student"
+				type = Customer_Portal
+				permissions = {Chat:false, Predefined:false, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "Browse the active food menu and place orders for pickup or delivery \n"
+				ModulePermissions
+				{
+					customer_profile
+					{
+						allFieldsVisible= true 
+						ReportPermissions
+						{
+							customer_profile_Report={"View","Edit"}
+							customer_profile_by_status={"View","Edit"}
+						}
+					}
+					food_order
+					{
+						allFieldsVisible= true 
+						ReportPermissions
+						{
+							food_order_by_order_status={"View"}
+							food_order_Report={"View"}
+						}
+					}
+					food_menu
+					{
+						allFieldsVisible= true 
+						ReportPermissions
+						{
+							food_menu_by_availability_status={"View"}
+							food_menu_Report={"View"}
+						}
+					}
+				}
+			}
+			"Customer"
+			{
+				name = "Customer"
+				type = Customer_Portal
+				permissions = {Chat:true, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "This is the default profile having only add and view permission.\n"
+			}
+			roles
+			{
+				"CEO"
+				{
+					description = "User belonging to this role can access data of all other users."
+				}
+			}
+	}
+
+
+	web
+	{
+		forms
+		{
+			form customer_profile
+			{
+				label placement = left
+			}
+			form food_category
+			{
+				label placement = left
+			}
+			form food_menu
+			{
+				label placement = left
+			}
+			form food_order
+			{
+				label placement = left
+			}
+			form food_type
+			{
+				label placement = left
+			}
+			form inventory_transaction
+			{
+				label placement = left
+			}
+			form order_item
+			{
+				label placement = left
+			}
+			form payment_record
+			{
+				label placement = left
+			}
+		}
+		reports
+		{
+			report food_menu_Report
+			{
+				quickview
+				(
+					layout
+					(
+						datablock1
+						(
+							fields
+							(
+								food_name as "Food Name"
+								food_code as "Food Code"
+								price as "Price"
+								description as "Description"
+								availability_status as "Availability Status"
+								category as "Category"
+								type_1 as "Type"
+								image_url as "Image URL"
+								calories as "Calories"
+								is_featured as "Is Featured"
+								status as "Status"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+								Print 
+								Add 
+								Import 
+								Export 
+							)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+							Print   	   
+    					)
+						)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+							Print   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+						datablock1
+						(
+		     				title = "Overview"
+							fields
+							(
+								food_name as "Food Name"
+								food_code as "Food Code"
+								price as "Price"
+								description as "Description"
+								availability_status as "Availability Status"
+								category as "Category"
+								type_1 as "Type"
+								image_url as "Image URL"
+								calories as "Calories"
+								is_featured as "Is Featured"
+								status as "Status"
+							)
+						)
+						datablock2
+						(
+		     				title = "Type"
+		     				related field = type_1
+							fields
+							(
+								food_type_name as "Food Type Name"
+								description as "Description"
+								type_code as "Type Code"
+								dietary_category as "Dietary Category"
+								preparation_time as "Preparation Time"
+								is_available as "Is Available"
+								status as "Status"
+							)
+						)
+						datablock3
+						(
+		     				title = "Category"
+		     				related field = category
+							fields
+							(
+								category_name as "Category Name"
+								description as "Description"
+								category_code as "Category Code"
+								is_vegetarian as "Is Vegetarian"
+								is_spicy as "Is Spicy"
+								allergen_info as "Allergen Info"
+								display_order as "Display Order"
+								status as "Status"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+								Print 
+							)
+						)
+				)
+			}
+			report food_menu_by_availability_status
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = 1
+						datablock1
+						(
+							layout type = 1
+							fields
+							(
+								food_name as "Food Name"
+								food_code as "Food Code"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+								Print 
+								Add 
+								Import 
+								Export 
+							)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+							Print   	   
+    					)
+						)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+							Print   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+						datablock1
+						(
+							fields
+							(
+								food_name as "Food Name"
+								food_code as "Food Code"
+								price as "Price"
+								description as "Description"
+								availability_status as "Availability Status"
+								category as "Category"
+								type_1 as "Type"
+								image_url as "Image URL"
+								calories as "Calories"
+								is_featured as "Is Featured"
+								status as "Status"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+								Print 
+							)
+						)
+				)
+			}
+			report food_order_Report
+			{
+				quickview
+				(
+					layout
+					(
+						datablock1
+						(
+							fields
+							(
+								order_id as "Order ID"
+								customer as "Customer"
+								order_date as "Order Date"
+								total_amount as "Total Amount"
+								order_status as "Order Status"
+								payment_method as "Payment Method"
+								special_instructions as "Special Instructions"
+								delivery_mode as "Delivery Mode"
+								estimated_time as "Estimated Time"
+								remarks as "Remarks"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+								Print 
+								Add 
+								Import 
+								Export 
+							)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+							Print   	   
+    					)
+						)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+							Print   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+						datablock1
+						(
+		     				title = "Overview"
+							fields
+							(
+								order_id as "Order ID"
+								customer as "Customer"
+								order_date as "Order Date"
+								total_amount as "Total Amount"
+								order_status as "Order Status"
+								payment_method as "Payment Method"
+								special_instructions as "Special Instructions"
+								delivery_mode as "Delivery Mode"
+								estimated_time as "Estimated Time"
+								remarks as "Remarks"
+							)
+						)
+						datablock2
+						(
+		     				title = "Customer"
+		     				related field = customer
+							fields
+							(
+								customer_name as "Customer Name"
+								email as "Email"
+								phone_number as "Phone Number"
+								address as "Address"
+								registration_date as "Registration Date"
+								customer_code as "Customer Code"
+								status as "Status"
+								department as "Department"
+								student_id as "Student ID"
+								staff_id as "Staff ID"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+								Print 
+							)
+						)
+				)
+			}
+			report food_order_by_order_status
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = 1
+						datablock1
+						(
+							layout type = 1
+							fields
+							(
+								order_id as "Order ID"
+								customer as "Customer"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+								Print 
+								Add 
+								Import 
+								Export 
+							)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+							Print   	   
+    					)
+						)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+							Print   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+						datablock1
+						(
+							fields
+							(
+								order_id as "Order ID"
+								customer as "Customer"
+								order_date as "Order Date"
+								total_amount as "Total Amount"
+								order_status as "Order Status"
+								payment_method as "Payment Method"
+								special_instructions as "Special Instructions"
+								delivery_mode as "Delivery Mode"
+								estimated_time as "Estimated Time"
+								remarks as "Remarks"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+								Print 
+							)
+						)
+				)
+			}
+			report order_item_Report
+			{
+				quickview
+				(
+					layout
+					(
+						datablock1
+						(
+							fields
+							(
+								item_number as "Item Number"
+								related_order as "Related Order"
+								food_item as "Food Item"
+								unit_price as "Unit Price"
+								quantity as "Quantity"
+								line_total as "Line Total"
+								item_status as "Item Status"
+								discount as "Discount"
+								tax_amount as "Tax Amount"
+								notes as "Notes"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+								Print 
+								Add 
+								Import 
+								Export 
+							)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+							Print   	   
+    					)
+						)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+							Print   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+						datablock1
+						(
+		     				title = "Overview"
+							fields
+							(
+								item_number as "Item Number"
+								related_order as "Related Order"
+								food_item as "Food Item"
+								unit_price as "Unit Price"
+								quantity as "Quantity"
+								line_total as "Line Total"
+								item_status as "Item Status"
+								discount as "Discount"
+								tax_amount as "Tax Amount"
+								notes as "Notes"
+							)
+						)
+						datablock2
+						(
+		     				title = "Related Order"
+		     				related field = related_order
+							fields
+							(
+								order_id as "Order ID"
+								customer as "Customer"
+								order_date as "Order Date"
+								total_amount as "Total Amount"
+								order_status as "Order Status"
+								payment_method as "Payment Method"
+								special_instructions as "Special Instructions"
+								delivery_mode as "Delivery Mode"
+								estimated_time as "Estimated Time"
+								remarks as "Remarks"
+							)
+						)
+						datablock3
+						(
+		     				title = "Food Item"
+		     				related field = food_item
+							fields
+							(
+								food_name as "Food Name"
+								food_code as "Food Code"
+								price as "Price"
+								description as "Description"
+								availability_status as "Availability Status"
+								category as "Category"
+								type_1 as "Type"
+								image_url as "Image URL"
+								calories as "Calories"
+								is_featured as "Is Featured"
+								status as "Status"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+								Print 
+							)
+						)
+				)
+			}
+			report inventory_transaction_Report
+			{
+				quickview
+				(
+					layout
+					(
+						datablock1
+						(
+							fields
+							(
+								transaction_id as "Transaction ID"
+								food_item as "Food Item"
+								transaction_type as "Transaction Type"
+								quantity as "Quantity"
+								transaction_date as "Transaction Date"
+								available_stock as "Available Stock"
+								minimum_stock_level as "Minimum Stock Level"
+								remarks as "Remarks"
+								supplier_name as "Supplier Name"
+								cost_per_unit as "Cost Per Unit"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+								Print 
+								Add 
+								Import 
+								Export 
+							)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+							Print   	   
+    					)
+						)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+							Print   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+						datablock1
+						(
+		     				title = "Overview"
+							fields
+							(
+								transaction_id as "Transaction ID"
+								food_item as "Food Item"
+								transaction_type as "Transaction Type"
+								quantity as "Quantity"
+								transaction_date as "Transaction Date"
+								available_stock as "Available Stock"
+								minimum_stock_level as "Minimum Stock Level"
+								remarks as "Remarks"
+								supplier_name as "Supplier Name"
+								cost_per_unit as "Cost Per Unit"
+							)
+						)
+						datablock2
+						(
+		     				title = "Food Item"
+		     				related field = food_item
+							fields
+							(
+								food_name as "Food Name"
+								food_code as "Food Code"
+								price as "Price"
+								description as "Description"
+								availability_status as "Availability Status"
+								category as "Category"
+								type_1 as "Type"
+								image_url as "Image URL"
+								calories as "Calories"
+								is_featured as "Is Featured"
+								status as "Status"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+								Print 
+							)
+						)
+				)
+			}
+			report inventory_transaction_by_transaction_type
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = 1
+						datablock1
+						(
+							layout type = 1
+							fields
+							(
+								supplier_name as "Supplier Name"
+								transaction_id as "Transaction ID"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+								Print 
+								Add 
+								Import 
+								Export 
+							)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+							Print   	   
+    					)
+						)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+							Print   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+						datablock1
+						(
+							fields
+							(
+								transaction_id as "Transaction ID"
+								food_item as "Food Item"
+								transaction_type as "Transaction Type"
+								quantity as "Quantity"
+								transaction_date as "Transaction Date"
+								available_stock as "Available Stock"
+								minimum_stock_level as "Minimum Stock Level"
+								remarks as "Remarks"
+								supplier_name as "Supplier Name"
+								cost_per_unit as "Cost Per Unit"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+								Print 
+							)
+						)
+				)
+			}
+			report customer_profile_Report
+			{
+				quickview
+				(
+					layout
+					(
+						datablock1
+						(
+							fields
+							(
+								customer_name as "Customer Name"
+								email as "Email"
+								phone_number as "Phone Number"
+								address as "Address"
+								registration_date as "Registration Date"
+								customer_code as "Customer Code"
+								status as "Status"
+								department as "Department"
+								student_id as "Student ID"
+								staff_id as "Staff ID"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+								Print 
+								Add 
+								Import 
+								Export 
+							)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+							Print   	   
+    					)
+						)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+							Print   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+						datablock1
+						(
+		     				title = "Overview"
+							fields
+							(
+								customer_name as "Customer Name"
+								email as "Email"
+								phone_number as "Phone Number"
+								address as "Address"
+								registration_date as "Registration Date"
+								customer_code as "Customer Code"
+								status as "Status"
+								department as "Department"
+								student_id as "Student ID"
+								staff_id as "Staff ID"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+								Print 
+							)
+						)
+				)
+			}
+			report customer_profile_by_status
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = 1
+						datablock1
+						(
+							layout type = 1
+							fields
+							(
+								customer_name as "Customer Name"
+								customer_code as "Customer Code"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+								Print 
+								Add 
+								Import 
+								Export 
+							)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+							Print   	   
+    					)
+						)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+							Print   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+						datablock1
+						(
+							fields
+							(
+								customer_name as "Customer Name"
+								email as "Email"
+								phone_number as "Phone Number"
+								address as "Address"
+								registration_date as "Registration Date"
+								customer_code as "Customer Code"
+								status as "Status"
+								department as "Department"
+								student_id as "Student ID"
+								staff_id as "Staff ID"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+								Print 
+							)
+						)
+				)
+			}
+			report food_type_Report
+			{
+				quickview
+				(
+					layout
+					(
+						datablock1
+						(
+							fields
+							(
+								food_type_name as "Food Type Name"
+								description as "Description"
+								type_code as "Type Code"
+								dietary_category as "Dietary Category"
+								preparation_time as "Preparation Time"
+								is_available as "Is Available"
+								status as "Status"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+								Print 
+								Add 
+								Import 
+								Export 
+							)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+							Print   	   
+    					)
+						)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+							Print   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+						datablock1
+						(
+		     				title = "Overview"
+							fields
+							(
+								food_type_name as "Food Type Name"
+								description as "Description"
+								type_code as "Type Code"
+								dietary_category as "Dietary Category"
+								preparation_time as "Preparation Time"
+								is_available as "Is Available"
+								status as "Status"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+								Print 
+							)
+						)
+				)
+			}
+			report food_type_by_dietary_category
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = 1
+						datablock1
+						(
+							layout type = 1
+							fields
+							(
+								food_type_name as "Food Type Name"
+								type_code as "Type Code"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+								Print 
+								Add 
+								Import 
+								Export 
+							)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+							Print   	   
+    					)
+						)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+							Print   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+						datablock1
+						(
+							fields
+							(
+								food_type_name as "Food Type Name"
+								description as "Description"
+								type_code as "Type Code"
+								dietary_category as "Dietary Category"
+								preparation_time as "Preparation Time"
+								is_available as "Is Available"
+								status as "Status"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+								Print 
+							)
+						)
+				)
+			}
+			report payment_record_Report
+			{
+				quickview
+				(
+					layout
+					(
+						datablock1
+						(
+							fields
+							(
+								payment_id as "Payment ID"
+								related_order as "Related Order"
+								payment_date as "Payment Date"
+								amount as "Amount"
+								payment_method as "Payment Method"
+								payment_status as "Payment Status"
+								transaction_reference as "Transaction Reference"
+								payer_name as "Payer Name"
+								remarks as "Remarks"
+								receipt_url as "Receipt URL"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+								Print 
+								Add 
+								Import 
+								Export 
+							)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+							Print   	   
+    					)
+						)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+							Print   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+						datablock1
+						(
+		     				title = "Overview"
+							fields
+							(
+								payment_id as "Payment ID"
+								related_order as "Related Order"
+								payment_date as "Payment Date"
+								amount as "Amount"
+								payment_method as "Payment Method"
+								payment_status as "Payment Status"
+								transaction_reference as "Transaction Reference"
+								payer_name as "Payer Name"
+								remarks as "Remarks"
+								receipt_url as "Receipt URL"
+							)
+						)
+						datablock2
+						(
+		     				title = "Related Order"
+		     				related field = related_order
+							fields
+							(
+								order_id as "Order ID"
+								customer as "Customer"
+								order_date as "Order Date"
+								total_amount as "Total Amount"
+								order_status as "Order Status"
+								payment_method as "Payment Method"
+								special_instructions as "Special Instructions"
+								delivery_mode as "Delivery Mode"
+								estimated_time as "Estimated Time"
+								remarks as "Remarks"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+								Print 
+							)
+						)
+				)
+			}
+			report payment_record_by_payment_method
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = 1
+						datablock1
+						(
+							layout type = 1
+							fields
+							(
+								payer_name as "Payer Name"
+								payment_id as "Payment ID"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+								Print 
+								Add 
+								Import 
+								Export 
+							)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+							Print   	   
+    					)
+						)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+							Print   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+						datablock1
+						(
+							fields
+							(
+								payment_id as "Payment ID"
+								related_order as "Related Order"
+								payment_date as "Payment Date"
+								amount as "Amount"
+								payment_method as "Payment Method"
+								payment_status as "Payment Status"
+								transaction_reference as "Transaction Reference"
+								payer_name as "Payer Name"
+								remarks as "Remarks"
+								receipt_url as "Receipt URL"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+								Print 
+							)
+						)
+				)
+			}
+			report food_category_Report
+			{
+				quickview
+				(
+					layout
+					(
+						datablock1
+						(
+							fields
+							(
+								category_name as "Category Name"
+								description as "Description"
+								category_code as "Category Code"
+								is_vegetarian as "Is Vegetarian"
+								is_spicy as "Is Spicy"
+								allergen_info as "Allergen Info"
+								display_order as "Display Order"
+								status as "Status"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+								Print 
+								Add 
+								Import 
+								Export 
+							)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+							Print   	   
+    					)
+						)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+							Print   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+						datablock1
+						(
+		     				title = "Overview"
+							fields
+							(
+								category_name as "Category Name"
+								description as "Description"
+								category_code as "Category Code"
+								is_vegetarian as "Is Vegetarian"
+								is_spicy as "Is Spicy"
+								allergen_info as "Allergen Info"
+								display_order as "Display Order"
+								status as "Status"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+								Print 
+							)
+						)
+				)
+			}
+		}
+		menu
+		{
+			space Space
+			{
+				displayname = "Space"
+				icon = "objects-spaceship"
+
+				section Section_1
+				{
+					displayname = "Dashboard"
+					icon = "ui-1-dashboard-half"
+					page DashBoard
+					{
+						icon = "ui-1-dashboard-half"
+					}
+				}
+				section Section_2
+				{
+					displayname = "Food Menus"
+					icon = "furniture-fridge"
+					form  food_menu
+					{
+						icon = "ui-1-bold-add"
+					}
+					report food_menu_Report
+					{
+						icon = "furniture-fridge"
+					}
+					report food_menu_by_availability_status
+					{
+						icon = "shopping-tag-sale"
+					}
+				}
+				section Section_3
+				{
+					displayname = "Food Orders"
+					icon = "furniture-fridge"
+					form  food_order
+					{
+						icon = "ui-1-bold-add"
+					}
+					report food_order_Report
+					{
+						icon = "travel-world"
+					}
+					report food_order_by_order_status
+					{
+						icon = "shopping-basket-edit"
+					}
+				}
+				section Section_4
+				{
+					displayname = "Items"
+					icon = "design-2-selection"
+					form  order_item
+					{
+						icon = "ui-1-bold-add"
+					}
+					report order_item_Report
+					{
+						icon = "travel-world"
+					}
+				}
+				section Section_5
+				{
+					displayname = "Inventory Transactions"
+					icon = "shopping-stock"
+					form  inventory_transaction
+					{
+						icon = "ui-1-bold-add"
+					}
+					report inventory_transaction_Report
+					{
+						icon = "travel-world"
+					}
+					report inventory_transaction_by_transaction_type
+					{
+						icon = "shopping-bitcoin"
+					}
+				}
+				section Section_6
+				{
+					displayname = "Customer Profiles"
+					icon = "media-1-polaroid-user"
+					form  customer_profile
+					{
+						icon = "ui-1-bold-add"
+					}
+					report customer_profile_Report
+					{
+						icon = "travel-world"
+					}
+					report customer_profile_by_status
+					{
+						icon = "design-2-selection"
+					}
+				}
+				section Section_7
+				{
+					displayname = "Food Types"
+					icon = "furniture-fridge"
+					form  food_type
+					{
+						icon = "ui-1-bold-add"
+					}
+					report food_type_Report
+					{
+						icon = "travel-world"
+					}
+					report food_type_by_dietary_category
+					{
+						icon = "design-window-paragraph"
+					}
+				}
+				section Section_8
+				{
+					displayname = "Payment Records"
+					icon = "shopping-receipt"
+					form  payment_record
+					{
+						icon = "ui-1-bold-add"
+					}
+					report payment_record_Report
+					{
+						icon = "travel-world"
+					}
+					report payment_record_by_payment_method
+					{
+						icon = "shopping-bitcoin"
+					}
+				}
+				section Section_9
+				{
+					displayname = "Food Categories"
+					icon = "furniture-fridge"
+					form  food_category
+					{
+						icon = "ui-1-bold-add"
+					}
+					report food_category_Report
+					{
+						icon = "travel-world"
+					}
+				}
+				section ZC_App_Preferences
+				{
+					displayname = "App Preferences"
+					icon = "design-app"
+					systemcomponent
+					{
+						type = localization
+						displayname = "Language Selection"
+						icon = "education-language"
+					}
+					systemcomponent
+					{
+						type = connection
+						displayname = "Integrations"
+						icon = "tech-2-connection"
+					}
+				}
+				section ZC_Approvals
+				{
+					displayname = "Approvals"
+					icon = "ui-2-hourglass"
+					systemcomponent
+					{
+						type = approval
+						approval status = pending
+						displayname = "Pending Tasks"
+						icon = "ui-2-hourglass"
+					}
+					systemcomponent
+					{
+						type = approval
+						approval status = completed
+						displayname = "Completed Tasks"
+						icon = "design-todo"
+					}
+				}
+				section SharedAnalytics_Section
+				{
+					type = shared_user_report_section
+					displayname = "Reports"
+					icon = "business-chart-bar-33"
+				}
+			}
+			preference
+			{
+				icon
+				{
+					style = solid
+					show = {space,section,component}
+				}
+			}
+		}
+		customize
+		{
+			new theme = 11
+			font = "poppins"
+			color options
+			{
+				color = "6"
+			}
+			logo
+			{
+				preference = "none"
+				placement = "left"
+			}
+		}
+	}
+	phone
+	{
+		customize
+		{
+			layout = twocolumn
+			font = "default"
+			style = "3"
+			color options
+			{
+				color = chryslerpurple
+			}
+			logo
+			{
+				preference = "none"
+			}
+		}
+	}
+	tablet
+	{
+		customize
+		{
+			layout = slidingpane
+			font = "default"
+			style = "3"
+			color options
+			{
+				color = yellow
+			}
+			logo
+			{
+				preference = "none"
+			}
+		}
+	}
+	translation
+{
+{"Language_Settings":{"LANGAGUE_WITH_LOGIN":"browser"}}
+}
+}
